@@ -30,7 +30,8 @@ async function main() {
     // await addMultipleCars(cars);
     // await findDocuments();
     // await findOneDocument()
-    await findDocumentsByQuery({"make": "Honda"})
+    // await findOneDocumentsByQuery({"isAvailable": true})
+    // await findDocumentsByQuery({"color": "Black"})
    }
    catch(err) {
      console.error(err)
@@ -78,7 +79,19 @@ async function findOneDocument() {
 
 // find one document by query
 async function findOneDocumentsByQuery(query) {
-    result = await collection.findOne(query);
+   const result = await collection.findOne(query);
     console.log(result);
+}
+
+// find documents by query
+async function findDocumentsByQuery(query) {
+    const cursor = collection.find(query);
+    const documents = await cursor.toArray();
+    if (documents.length === 0) {
+        console.log('No documents found');
+        return;
+    }
+    console.log(documents);
+    return documents;
 }
 
