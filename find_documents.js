@@ -13,7 +13,11 @@ async function main() {
         
         // await findOneDocument({ name: "David Lee" });
         // await findDocuments();
-        await findDocumentsByQuery({ color: "White" });
+        // await findDocumentsByQuery({ color: "Black" });
+        await findDocumentsByQueryAndProjection(
+            {color: "Black"}, 
+            {projection: {color: 1, price: 1, make: 1, model: 1}}
+        );
 
     } catch(err) {
         console.error(err);
@@ -45,6 +49,20 @@ async function findDocuments() {
 
 async function findDocumentsByQuery(query) {
     const cursor = await collection.find(query);
+    const documents = await cursor.toArray();
+
+    if (documents.length === 0) {
+        console.log('No documents found');
+        return;
+    }
+    console.log(documents);
+    console.log(`${documents.length} documents found with that query`);
+    return documents;
+}
+
+
+async function findDocumentsByQueryAndProjection(query, projection) {
+    const cursor = await collection.find(query, projection);
     const documents = await cursor.toArray();
 
     if (documents.length === 0) {
