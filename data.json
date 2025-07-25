@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2021,
+    "color": "Silver",
+    "vin": "1HGCM82633A123456",
+    "mileage": 35400,
+    "price": 21950,
+    "isAvailable": true
+  },
+  {
+    "id": 2,
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2020,
+    "color": "Blue",
+    "vin": "2HGFA16558H123456",
+    "mileage": 29800,
+    "price": 18700,
+    "isAvailable": true
+  },
+  {
+    "id": 3,
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2019,
+    "color": "Black",
+    "vin": "1FTFW1EF3EKF12345",
+    "mileage": 45000,
+    "price": 27500,
+    "isAvailable": false
+  },
+  {
+    "id": 4,
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2022,
+    "color": "Red",
+    "vin": "1G1ZD5ST1LF123456",
+    "mileage": 12300,
+    "price": 23999,
+    "isAvailable": true
+  },
+  {
+    "id": 5,
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2023,
+    "color": "White",
+    "vin": "5YJ3E1EA7LF123456",
+    "mileage": 8200,
+    "price": 38999,
+    "isAvailable": true
+  },
+  {
+    "id": 6,
+    "make": "BMW",
+    "model": "X5",
+    "year": 2018,
+    "color": "Gray",
+    "vin": "5UXKR0C58J0X12345",
+    "mileage": 61000,
+    "price": 31900,
+    "isAvailable": false
+  },
+  {
+    "id": 7,
+    "make": "Audi",
+    "model": "A4",
+    "year": 2021,
+    "color": "Blue",
+    "vin": "WAUDF78E48A123456",
+    "mileage": 20500,
+    "price": 28900,
+    "isAvailable": true
+  },
+  {
+    "id": 8,
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2020,
+    "color": "Black",
+    "vin": "1N4AL3AP0FC123456",
+    "mileage": 37000,
+    "price": 17950,
+    "isAvailable": false
+  },
+  {
+    "id": 9,
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2022,
+    "color": "White",
+    "vin": "5NPDH4AE4DH123456",
+    "mileage": 14000,
+    "price": 20450,
+    "isAvailable": true
+  },
+  {
+    "id": 10,
+    "make": "Kia",
+    "model": "Sportage",
+    "year": 2019,
+    "color": "Green",
+    "vin": "KNDPN3AC7K1234567",
+    "mileage": 43000,
+    "price": 21500,
+    "isAvailable": false
+  }
+]

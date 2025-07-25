@@ -1,0 +1,48 @@
+[
+    {
+      "id": "EMP001",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "position": "Software Engineer",
+      "department": "Engineering",
+      "salary": 95000,
+      "hireDate": "2021-03-15"
+    },
+    {
+      "id": "EMP002",
+      "name": "Brian Smith",
+      "email": "brian.smith@example.com",
+      "position": "Project Manager",
+      "department": "Management",
+      "salary": 105000,
+      "hireDate": "2019-07-01"
+    },
+    {
+      "id": "EMP003",
+      "name": "Carla Gomez",
+      "email": "carla.gomez@example.com",
+      "position": "UX Designer",
+      "department": "Design",
+      "salary": 87000,
+      "hireDate": "2020-10-20"
+    },
+    {
+      "id": "EMP004",
+      "name": "David Lee",
+      "email": "david.lee@example.com",
+      "position": "Data Analyst",
+      "department": "Analytics",
+      "salary": 78000,
+      "hireDate": "2022-01-10"
+    },
+    {
+      "id": "EMP005",
+      "name": "Eva Martinez",
+      "email": "eva.martinez@example.com",
+      "position": "HR Specialist",
+      "department": "Human Resources",
+      "salary": 69000,
+      "hireDate": "2018-05-22"
+    }
+  ]
+  
