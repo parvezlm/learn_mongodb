@@ -14,9 +14,22 @@ async function main() {
         // await findOneDocument({ name: "David Lee" });
         // await findDocuments();
         // await findDocumentsByQuery({ color: "Black" });
-        await findDocumentsByQueryAndProjection(
-            {color: "Black"}, 
-            {projection: {color: 1, price: 1, make: 1, model: 1}}
+        // await findDocumentsByQueryAndProjection(
+        //     { color: "Black" }, 
+        //     { projection: { color: 1, price: 1, make: 1, model: 1 } }
+        // );
+
+        // ====== operators =====
+        // await filterDocumentsBycomparisonOperators({ price: { $gte: 30000}, year: { $gte: 2012 } });
+        await filterDocumentsByLogicalOperators(
+            { 
+                $and: [ 
+                    { color: "Black" },
+                    { year: { $gte: 2012} },
+                    { price: { $gte: 20000 } }
+                ]
+            },
+            { projection: { make: 1, color: 1, year: 1, price: 1 } }
         );
 
     } catch(err) {
@@ -63,6 +76,32 @@ async function findDocumentsByQuery(query) {
 
 async function findDocumentsByQueryAndProjection(query, projection) {
     const cursor = await collection.find(query, projection);
+    const documents = await cursor.toArray();
+
+    if (documents.length === 0) {
+        console.log('No documents found');
+        return;
+    }
+    console.log(documents);
+    console.log(`${documents.length} documents found with that query`);
+    return documents;
+}
+
+async function filterDocumentsBycomparisonOperators(query) {
+    const cursor = await collection.find(query);
+    const documents = await cursor.toArray();
+
+    if (documents.length === 0) {
+        console.log('No documents found');
+        return;
+    }
+    console.log(documents);
+    console.log(`${documents.length} documents found with that query`);
+    return documents;
+}
+
+async function filterDocumentsByLogicalOperators(query, projection) {
+    const cursor =await collection.find(query, projection);
     const documents = await cursor.toArray();
 
     if (documents.length === 0) {
