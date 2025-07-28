@@ -21,16 +21,18 @@ async function main() {
 
         // ====== operators =====
         // await filterDocumentsBycomparisonOperators({ price: { $gte: 30000}, year: { $gte: 2012 } });
-        await filterDocumentsByLogicalOperators(
-            { 
-                $and: [ 
-                    { color: "Black" },
-                    { year: { $gte: 2012} },
-                    { price: { $gte: 20000 } }
-                ]
-            },
-            { projection: { make: 1, color: 1, year: 1, price: 1 } }
-        );
+        // await filterDocumentsByLogicalOperators(
+        //     { 
+        //         $and: [ 
+        //             { color: "Black" },
+        //             { year: { $gte: 2012} },
+        //             { price: { $gte: 20000 } }
+        //         ]
+        //     },
+        //     { projection: { make: 1, color: 1, year: 1, price: 1 } }
+        // );
+
+        await checkFieldExists({ isAvailable: { $exists: false}});
 
     } catch(err) {
         console.error(err);
@@ -111,4 +113,17 @@ async function filterDocumentsByLogicalOperators(query, projection) {
     console.log(documents);
     console.log(`${documents.length} documents found with that query`);
     return documents;
+}
+
+async function checkFieldExists(query) {
+   const cursor =  await collection.find(query);
+   const document = await cursor.toArray();
+
+   if (document.length === 0) {
+    console.log('No documents found');
+    return;
+   }
+   console.log(document);
+   console.log(`${document.length} documents found with that query`);
+   return document;
 }
